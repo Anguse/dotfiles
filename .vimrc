@@ -4,7 +4,9 @@ set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
+set guicursor=
+set nohlsearch
+set hidden
 set nu
 set nowrap
 set smartcase
@@ -13,7 +15,11 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set scrolloff=8
+set smartindent
 set nocompatible
+set signcolumn=yes
+set termguicolors
 
 filetype plugin on
 
@@ -22,10 +28,11 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'leafgarland/typescript-vim'
@@ -44,13 +51,16 @@ Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
-
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
-
+packloadall
 colorscheme gruvbox
 set background=dark
+highlight Normal guibg=none
 
 let g:airline_powerline_fonts = 1
 
@@ -92,7 +102,12 @@ nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
+" Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" Snippets
+"let g:UltiSnipsExpandTrigger="<tab>"
+
 " Closing parenthesis, etc.
 inoremap " ""<left>
 inoremap ' ''<left>
