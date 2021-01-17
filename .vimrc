@@ -7,7 +7,7 @@ set expandtab
 set guicursor=
 set nohlsearch
 set hidden
-set nu
+set nu rnu
 set nowrap
 set smartcase
 set noswapfile
@@ -54,6 +54,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
+Plug 'dbakker/vim-projectroot'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
