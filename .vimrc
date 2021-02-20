@@ -51,10 +51,16 @@ Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'ervandew/supertab'
 Plug 'dbakker/vim-projectroot'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+" Plug 'dbeniamine/cheat.sh-vim'
+Plug 'MarcWeber/vim-addon-local-vimrc'
+" Debugger plugins
+" Plug 'puremourning/vimspector'
+" Plug 'szw/vim-maximizer'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -76,6 +82,7 @@ let g:asynctasks_term_pos = 'external'
 nnoremap <F2> :AsyncTask task1<CR>
 nnoremap <F3> :AsyncTask task2<CR>
 nnoremap <F4> :AsyncTask task3<CR>
+nnoremap <F5> :AsyncTask task4<CR>
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-stand']
 let mapleader = " "
@@ -96,6 +103,7 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 "gfiles, rg, undotree
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ps :Rg<SPACE>
+nnoremap <leader>pf :Rg<SPACE><c-r><c-w>
 nnoremap <C-p> :GFiles<CR>
 
 " YCM
@@ -130,8 +138,51 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" Move selected text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Doxygen
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+let g:DoxygenToolkit_paramTag_pre="@Param "
+let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_blockHeader="-------------------------------"
+let g:DoxygenToolkit_blockFooter="---------------------------------"
+let g:DoxygenToolkit_authorName="Harald Lilja"
+let g:DoxygenToolkit_licenseTag="My own license" 
+
 " Indent fix for yml files
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+" XML formatting
+function! DoPrettyXML()
+  " save the filetype so we can restore it later
+  let l:origft = &ft
+  set ft=
+  " delete the xml header if it exists. This will
+  " permit us to surround the document with fake tags
+  " without creating invalid xml.
+  1s/<?xml .*?>//e
+  " insert fake tags around the entire document.
+  " This will permit us to pretty-format excerpts of
+  " XML that may contain multiple top-level elements.
+  0put ='<PrettyXML>'
+  $put ='</PrettyXML>'
+  silent %!xmllint --format -
+  " xmllint will insert an <?xml?> header. it's easy enough to delete
+  " if you don't want it.
+  " delete the fake tags
+  2d
+  $d
+  " restore the 'normal' indentation, which is one extra level
+  " too deep due to the extra tags we wrapped around the document.
+  silent %<
+  " back to home
+  1
+  " restore the filetype
+  exe "set ft=" . l:origft
+endfunction
+command! PrettyXML call DoPrettyXML()
