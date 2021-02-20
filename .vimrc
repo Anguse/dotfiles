@@ -29,7 +29,10 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.vim/plugged')
 
 Plug 'gruvbox-community/gruvbox'
+Plug 'vim-ruby/vim-ruby'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
@@ -54,6 +57,9 @@ Plug 'vimwiki/vimwiki'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 " Plug 'ervandew/supertab'
+" Plug 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
 Plug 'dbakker/vim-projectroot'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 " Plug 'dbeniamine/cheat.sh-vim'
@@ -62,6 +68,8 @@ Plug 'MarcWeber/vim-addon-local-vimrc'
 " Plug 'puremourning/vimspector'
 " Plug 'szw/vim-maximizer'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'lervag/vimtex'
+Plug 'ekalinin/dockerfile.vim'
 
 call plug#end()
 packloadall
@@ -110,21 +118,27 @@ nnoremap <C-p> :GFiles<CR>
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+imap jj <Esc>
 
 " Snippets
 "let g:UltiSnipsExpandTrigger="<tab>"
 
 " Closing parenthesis, etc.
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" inoremap " ""<left>
+" inoremap ' ''<left>
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
