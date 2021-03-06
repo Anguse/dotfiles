@@ -70,6 +70,8 @@ Plug 'szw/vim-maximizer'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
 Plug 'ekalinin/dockerfile.vim'
+Plug 'Chiel92/vim-autoformat'
+" Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 packloadall
