@@ -66,7 +66,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 " Debugger plugins
 " Plug 'puremourning/vimspector'
-" Plug 'szw/vim-maximizer'
+Plug 'szw/vim-maximizer'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
 Plug 'ekalinin/dockerfile.vim'
@@ -107,17 +107,21 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
+nnoremap <leader>z :MaximizerToggle <CR>
+imap jj <Esc>
 
-"gfiles, rg, undotree
+"gfiles, rg, undotree, fugitive
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>pf :Rg<SPACE><c-r><c-w>
 nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>b :Gblame<CR>
 
 " YCM
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+nnoremap <Leader>grr :YcmCompleter RefactorRename<SPACE>
 if !exists('g:ycm_semantic_triggers')
     let g:ycm_semantic_triggers = {}
 endif
@@ -125,8 +129,6 @@ au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-
-imap jj <Esc>
 
 " Snippets
 "let g:UltiSnipsExpandTrigger="<tab>"
