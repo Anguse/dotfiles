@@ -72,6 +72,7 @@ Plug 'lervag/vimtex'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'Chiel92/vim-autoformat'
 " Plug 'ludovicchabant/vim-gutentags'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 packloadall
@@ -110,6 +111,10 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <leader>z :MaximizerToggle <CR>
+nnoremap <C-k> :cprevious<CR>
+nnoremap <C-j> :cnext<CR>
+nnoremap <silent> <Leader>ln :lnext<CR>
+nnoremap <silent> <Leader>lp :lprevious<CR>
 imap jj <Esc>
 
 "gfiles, rg, undotree, fugitive
