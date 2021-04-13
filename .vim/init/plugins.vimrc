@@ -33,6 +33,7 @@ nnoremap <leader>b :Gblame<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TagbarCurrentTag<CR>
 
 " Doxygen
 let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
