@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " Appearance
 Plug 'gruvbox-community/gruvbox'
-Plug 'sickill/vim-monokai'
+Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'

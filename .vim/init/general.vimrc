@@ -24,8 +24,8 @@ set colorcolumn=80
 filetype plugin on
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 packloadall
-colorscheme gruvbox
-set background=dark
+colorscheme molokai
+" set background=dark
 highlight Normal guibg=none
 
 " netrw directory browser
