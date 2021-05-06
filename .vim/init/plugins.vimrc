@@ -52,5 +52,8 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
+" clang-format
+let g:clang_format#detect_style_file=1
+
 " Snippets
 "let g:UltiSnipsExpandTrigger="<tab>"
