@@ -1,8 +1,5 @@
 let mapleader = " "
 
-" Builtin filetree just because
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-
 " Copy to clipboard
 vnoremap  <leader>y  "+y
 nnoremap  <leader>Y  "+yg_
@@ -28,3 +25,6 @@ let g:netrw_winsize=25
 
 " Avoid escape
 imap jj <Esc>
+
+" Insert timestamp
+nnoremap <leader>ts :pu=strftime('%c')<CR>

@@ -10,11 +10,8 @@ nnoremap <F5> :AsyncTask task4<CR>
 " Airline
 let g:airline_powerline_fonts = 1
 
-" Fzf
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-stand']
-let g:ctrlp_use_caching=0
-
 " YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
@@ -24,12 +21,18 @@ if !exists('g:ycm_semantic_triggers')
 endif
 au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
-"Gfiles, rg, undotree, vim-fugitive
-nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>ps :Rg<SPACE>
-nnoremap <leader>pf :Rg<SPACE><c-r><c-w>
-nnoremap <C-p> :GFiles<CR>
+"Fugitive
 nnoremap <leader>b :Gblame<CR>
+
+" Telecope
+nnoremap <C-p> :Telescope find_files<cr>
+nnoremap <leader>ps :Telescope live_grep<cr>
+nnoremap <leader>pf :Telescope grep_string<CR>
+
+" Gutter
+let g:gitgutter_enabled = 0
+nmap <F7> :GitGutterToggle<CR>
+nnoremap <leader>gg :GitGutterQuickFix<bar> :copen<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -54,6 +57,9 @@ endif
 
 " clang-format
 let g:clang_format#detect_style_file=1
+
+" Nerdtree
+nnoremap <leader>pv :NERDTreeFind<CR>
 
 " Snippets
 "let g:UltiSnipsExpandTrigger="<tab>"

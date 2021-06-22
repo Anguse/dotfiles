@@ -10,10 +10,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
 " File find
-Plug 'junegunn/fzf', { 'do' : { -> fzf#install() }}
-Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
-Plug 'kien/ctrlp.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " Completion
 Plug 'Valloric/YouCompleteMe'
@@ -42,13 +41,18 @@ Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'liuchengxu/vista.vim'
 Plug 'preservim/tagbar'
 
+" NERDTree
+Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'tpope/vim-eunuch'                 " Shell commands
 Plug 'tpope/vim-commentary'             " Comments
 Plug 'tpope/vim-surround'               " Surround words with parenthese etc.
 Plug 'tpope/vim-fugitive'               " Git
+Plug 'airblade/vim-gitgutter'           " Gutter
 Plug 'leafgarland/typescript-vim'       " Typescript
 Plug 'vim-utils/vim-man'                " Manual
-Plug 'mbbill/undotree'                  " Undo
 Plug 'vimwiki/vimwiki'                  " Notes
 Plug 'tomtom/tlib_vim'                  " Utility functions, dependancy
 Plug 'vim-scripts/DoxygenToolkit.vim'   " Doxygen
