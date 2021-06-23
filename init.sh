@@ -25,9 +25,14 @@ link.tmux() {
     run "ln -s ${ProjectRoot}/.tmux.conf ~/.tmux.conf"
 }
 
+link.ycm() {
+    run "ln -s ${ProjectRoot}/.ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py"
+}
+
 main() {
     info_msg
     link.vim
+    link.ycm
     link.tmux
 }
 
