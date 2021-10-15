@@ -60,6 +60,8 @@ Plug 'lervag/vimtex'                    " Latex compiler
 Plug 'szw/vim-maximizer'                " Window maximizer, like tmux zoom
 Plug 'MarcWeber/vim-addon-mw-utils'     " Dependancy?
 Plug 'mg979/vim-visual-multi'			" Multi cursosr
+Plug 'wellle/targets.vim'               " Extended targets, like ci'
+
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 " Plug 'ervandew/supertab'
