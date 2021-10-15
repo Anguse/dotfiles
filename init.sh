@@ -29,11 +29,17 @@ link.ycm() {
     run "ln -s ${ProjectRoot}/.ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py"
 }
 
+link.ranger() {
+    run "ln -s ${ProjectRoot}/.config/ranger/rc.conf ~/.config/ranger/rc.conf"
+    run "ln -s ${ProjectRoot}/.config/ranger/commands.py ~/.config/ranger/commands.py"
+}
+
 main() {
     info_msg
     link.vim
     link.ycm
     link.tmux
+    link.ranger
 }
 
 (( $_s_ )) || main
