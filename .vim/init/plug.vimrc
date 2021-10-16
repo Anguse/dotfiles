@@ -50,6 +50,7 @@ Plug 'tpope/vim-eunuch'                 " Shell commands
 Plug 'tpope/vim-commentary'             " Comments
 Plug 'tpope/vim-surround'               " Surround words with parenthese etc.
 Plug 'tpope/vim-fugitive'               " Git
+Plug 'tpope/vim-rhubarb'                " Gbrowse
 Plug 'airblade/vim-gitgutter'           " Gutter
 Plug 'leafgarland/typescript-vim'       " Typescript
 Plug 'vim-utils/vim-man'                " Manual
@@ -61,6 +62,7 @@ Plug 'szw/vim-maximizer'                " Window maximizer, like tmux zoom
 Plug 'MarcWeber/vim-addon-mw-utils'     " Dependancy?
 Plug 'mg979/vim-visual-multi'			" Multi cursosr
 Plug 'wellle/targets.vim'               " Extended targets, like ci'
+" Plug 'vim-ctrlspace/vim-ctrlspace'      " Workspaces, bookmarks, files...
 
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'

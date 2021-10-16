@@ -6,6 +6,7 @@ nnoremap <F2> :AsyncTask task1<CR>
 nnoremap <F3> :AsyncTask task2<CR>
 nnoremap <F4> :AsyncTask task3<CR>
 nnoremap <F5> :AsyncTask task4<CR>
+nnoremap <F6> :AsyncStop<CR>
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -60,6 +61,9 @@ let g:clang_format#detect_style_file=1
 
 " Nerdtree
 nnoremap <leader>pv :NERDTreeFind<CR>
+
+" Ctrl-space
+" let g:CtrlSpaceDefaultMappingKey = "<C-space> "
 
 " Snippets
 "let g:UltiSnipsExpandTrigger="<tab>"
