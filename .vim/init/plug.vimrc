@@ -7,7 +7,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim'
 
 " File find
 Plug 'nvim-lua/popup.nvim'
