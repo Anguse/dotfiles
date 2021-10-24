@@ -46,12 +46,15 @@ Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
+"Git
+Plug 'tpope/vim-fugitive'               " Git
+Plug 'tpope/vim-rhubarb'                " Gbrowse
+Plug 'shumphrey/fugitive-gitlab.vim'    " Gbrowse gitlab support
+Plug 'airblade/vim-gitgutter'           " Gutter
+
 Plug 'tpope/vim-eunuch'                 " Shell commands
 Plug 'tpope/vim-commentary'             " Comments
 Plug 'tpope/vim-surround'               " Surround words with parenthese etc.
-Plug 'tpope/vim-fugitive'               " Git
-Plug 'tpope/vim-rhubarb'                " Gbrowse
-Plug 'airblade/vim-gitgutter'           " Gutter
 Plug 'leafgarland/typescript-vim'       " Typescript
 Plug 'vim-utils/vim-man'                " Manual
 Plug 'vimwiki/vimwiki'                  " Notes
