@@ -30,6 +30,9 @@ nnoremap <C-p> :Telescope find_files<cr>
 nnoremap <leader>ps :Telescope live_grep<cr>
 nnoremap <leader>pf :Telescope grep_string<CR>
 
+" Fugitive gitlab for strongpoint
+let g:fugitive_gitlab_domains = ['https://gitlab.strongpoint.com']
+
 " Gutter
 let g:gitgutter_enabled = 0
 nmap <F7> :GitGutterToggle<CR>

@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/usr/local/go/bin:/usr/include
+export PATH=$PATH:/usr/local/go/bin:/usr/include:~/.cargo/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/lib:/usr/include
 
 export TERMINAL="alacritty"
@@ -145,7 +145,7 @@ scp-from-target()
 {
     hosts=`grep -P "^Host ([^*]+)$" $HOME/.ssh/config | sed 's/Host //'`
     host=`printf $hosts | fzf`
-    file=`sshpass -f $SP_SSH_PASSWD ssh -t $host "cd / && fd --type file --color never" | fzf --header="Select file"`
+    file=`sshpass -f $SP_SSH_PASSWD ssh -t $host "find / -type f" | fzf --header="Select file"`
 	sshpass -f $SP_SSH_PASSWD scp $host:/$file .
 }
 tail-target()
@@ -153,18 +153,29 @@ tail-target()
     hosts=`grep -P "^Host ([^*]+)$" $HOME/.ssh/config | sed 's/Host //'`
     host=`printf $hosts | fzf`
     file=`sshpass -f $SP_SSH_PASSWD ssh -t $host "cd /strongpoint/log/current && fd -e log --color never" | fzf --header="Select log"`
-	sshpass -f $SP_SSH_PASSWD ssh -t $host "tail -n 3 -f /strongpoint/log/current/$file | grep $1"
+    echo "Enter tail query: "
+    read query
+	sshpass -f $SP_SSH_PASSWD ssh -t $host "tail -n 3 -f /strongpoint/log/current/$file | grep $query"
 }
 docking-station-init()
 {
-    xrandr --output eDP-1 --off
-    xrandr --output DP-2-3 --auto
-    xrandr --output DP-2-3 --mode 1920x1080 --rate 60
+    interface=`printf "DP-1\nDP-2-3" | fzf --header="Select display interface"`
+    resolution=`printf "1920x1080\n4196x2160" | fzf --header="Select display resolution"`
+    rate=`printf "30\n60" | fzf --header="Select display rate"`
+    # xrandr --output $interface --auto
+    xrandr --output $interface --mode $resolution --rate $rate --same-as eDP-1
 }
 docking-station-destroy()
 {
-    xrandr --output DP-2-3 --off
+    interface=`printf "DP-1\nDP-2-3" | fzf --header="Select display interface"`
+    xrandr --output $interface --off
     xrandr --output eDP-1 --auto
+}
+redmine-fetch()
+{
+    export PYTHONWARNINGS="ignore:Unverified HTTPS request"
+    python3 $SP_ROOT/redmine/redmine-fetch.py
+    unset PYTHONWARNINGS
 }
 
 # Load mtime at bash start-up

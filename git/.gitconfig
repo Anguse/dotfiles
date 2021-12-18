@@ -1,0 +1,7 @@
+[user]
+	name = Harald Lilja
+	email = harald.lilja@prevas.se
+[url "ssh://pdprojects@pdprojects.prevas.com/"]
+	insteadOf = https://pdprojects.prevas.com/
+[credential]
+	helper = store

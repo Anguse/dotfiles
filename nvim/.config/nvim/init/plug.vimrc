@@ -5,9 +5,10 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'gruvbox-community/gruvbox'
 Plug 'tomasr/molokai'
+Plug 'gosukiwi/vim-atom-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
+" Plug 'edkolev/tmuxline.vim'
 
 " File find
 Plug 'nvim-lua/popup.nvim'
