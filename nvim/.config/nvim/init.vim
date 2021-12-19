@@ -1,5 +1,5 @@
-source ./init/plug.vimrc
-source ./init/general.vimrc
-source ./init/leader.vimrc
-source ./init/functions.vimrc
-source ./init/plugins.vimrc
+source ~/.config/nvim/init/plug.vimrc
+source ~/.config/nvim/init/general.vimrc
+source ~/.config/nvim/init/leader.vimrc
+source ~/.config/nvim/init/functions.vimrc
+source ~/.config/nvim/init/plugins.vimrc

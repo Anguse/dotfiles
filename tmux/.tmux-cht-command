@@ -1,0 +1,5 @@
+find
+xargs
+git
+docker
+awk
