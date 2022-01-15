@@ -31,6 +31,9 @@ let g:netrw_browse_split=2
 let g:netrw_banner=0
 let g:netrw_winsize=25
 
+" Exit terminal mode more smoothly
+tnoremap <C-[> <C-\><C-n>
+
 " Move selected text
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
