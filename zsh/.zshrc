@@ -141,6 +141,18 @@ docking-station-destroy()
     xrandr --output $interface --off
     xrandr --output eDP-1 --auto
 }
+open-ssh-hosts()
+{
+    nmap -p 22 --open -sV $SP_KISTA_SUBNET/24 -oG - | awk '/Up$/{print $2}'
+}
+ssh-syscon-target()
+{
+    # ssh-hosts=`open-ssh-hosts`
+    target=`open-ssh-hosts | fzf`
+	sshpass -f $SP_SSH_PASSWD ssh root@$target
+    # interface=`printf "DP-1\nDP-2-3" | fzf --header="Select display interface"`
+}
+
 
 # Load mtime at bash start-up
 # echo "zshrc mtime: $(stat -f ~/.zshrc)" >&2
