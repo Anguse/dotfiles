@@ -12,7 +12,7 @@ nnoremap <F6> :AsyncStop<CR>
 let g:airline_powerline_fonts = 1
 
 " YCM
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>

@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/.local/bin
 
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
@@ -9,7 +9,7 @@ export TERM=screen-256color
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="arrow"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -156,3 +156,8 @@ check_and_reload_zshrc () {
     fi
 }
 precmd() { eval "$PROMPT_COMMAND" }
+
+# Do something like this to source different zshrc files based on profile?
+# https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout
+[[ -f "${ZSH_DIR}/profiles/${ZSH_PROFILE}.rc.zsh" ]] &&
+    source "${ZSH_DIR}/profiles/${ZSH_PROFILE}.rc.zsh"
