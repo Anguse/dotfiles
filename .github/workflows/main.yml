@@ -28,4 +28,4 @@ jobs:
       # Runs a single command using the runners shell
       - name: Trigger docker-dev build
         run: |
-          curl -XPOST -u "Anguse:${{ secrets.MY_REPO_PAT }}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/Anguse/docker-dev/dispatches --data '{"event_type": "build_application"}'
+          curl -XPOST -u "Anguse:${{ secrets.MY_REPO_PAT }}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/Anguse/docker-dev/dispatches --data '{"event_type": "Dotfiles trigger"}'
