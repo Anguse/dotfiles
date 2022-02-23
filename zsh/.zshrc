@@ -110,15 +110,15 @@ scp-target()
     file=`fzf --header="Select file" | sed 's/\n//'`
     hosts=`grep -P "^Host ([^*]+)$" $HOME/.ssh/config | sed 's/Host //'`
     host=`printf $hosts | fzf --header="Select target"`
-    directory=`sshpass -f $SP_SSH_PASSWD ssh -t $host "cd / && fd --type directory --color never" | fzf --header="Select target directory"`
-	sshpass -f $SP_SSH_PASSWD scp $file $host:/$directory
+    directory=`ssh -t $host "cd / && find -type d" | fzf --header="Select target directory"`
+	scp $file $host:/$directory
 }
 scp-from-target()
 {
     hosts=`grep -P "^Host ([^*]+)$" $HOME/.ssh/config | sed 's/Host //'`
     host=`printf $hosts | fzf`
-    file=`sshpass -f $SP_SSH_PASSWD ssh -t $host "find / -type f" | fzf --header="Select file"`
-	sshpass -f $SP_SSH_PASSWD scp $host:/$file .
+    file=`ssh -t $host "find / -type f" | fzf --header="Select file"`
+	scp $host:/$file .
 }
 tail-target()
 {
