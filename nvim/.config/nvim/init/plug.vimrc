@@ -66,9 +66,10 @@ Plug 'szw/vim-maximizer'                " Window maximizer, like tmux zoom
 Plug 'MarcWeber/vim-addon-mw-utils'     " Dependancy?
 Plug 'mg979/vim-visual-multi'			" Multi cursosr
 Plug 'wellle/targets.vim'               " Extended targets, like ci'
-Plug 'jvirtanen/vim-hcl'
-" Plug 'vim-ctrlspace/vim-ctrlspace'      " Workspaces, bookmarks, files...
+Plug 'jvirtanen/vim-hcl'                " Hashicorp configuration files syntax highlight
+Plug 'hashivim/vim-terraform'           " TerraformFmt
 
+" Plug 'vim-ctrlspace/vim-ctrlspace'      " Workspaces, bookmarks, files...
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 " Plug 'ervandew/supertab'
