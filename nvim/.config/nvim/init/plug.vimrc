@@ -66,6 +66,7 @@ Plug 'szw/vim-maximizer'                " Window maximizer, like tmux zoom
 Plug 'MarcWeber/vim-addon-mw-utils'     " Dependancy?
 Plug 'mg979/vim-visual-multi'			" Multi cursosr
 Plug 'wellle/targets.vim'               " Extended targets, like ci'
+Plug 'jvirtanen/vim-hcl'
 " Plug 'vim-ctrlspace/vim-ctrlspace'      " Workspaces, bookmarks, files...
 
 " Plug 'SirVer/ultisnips'
