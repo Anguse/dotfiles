@@ -12,6 +12,9 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+" Edit file under cursor
+nnoremap <leader>e :edit <cfile><CR>
+
 " Quickfix and Local list
 nnoremap <silent> <Leader>ln :lnext<CR>
 nnoremap <silent> <Leader>lp :lprevious<CR>
