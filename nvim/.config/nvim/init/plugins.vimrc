@@ -26,9 +26,17 @@ au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 nnoremap <leader>b :Gblame<CR>
 
 " Telecope
-nnoremap <C-p> :Telescope find_files<cr>
-nnoremap <leader>ps :Telescope live_grep<cr>
-nnoremap <leader>pf :Telescope grep_string<CR>
+nnoremap <silent><C-p> :Telescope find_files<CR>
+nnoremap <silent><leader>ps :Telescope live_grep<CR>
+nnoremap <silent><leader>pf :Telescope grep_string<CR>
+
+" Harpoon
+nnoremap <silent><leader>m :lua require("harpoon.mark").add_file()<CR>
+nnoremap <silent><leader>j :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <silent><leader>f :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <silent><leader>d :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <silent><leader>s :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <silent><leader>a :lua require("harpoon.ui").nav_file(4)<CR>
 
 " Fugitive gitlab for strongpoint
 let g:fugitive_gitlab_domains = ['https://gitlab.strongpoint.com']
