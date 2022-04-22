@@ -29,6 +29,7 @@ nnoremap <leader>b :Gblame<CR>
 nnoremap <silent><C-p> :Telescope find_files<CR>
 nnoremap <silent><leader>ps :Telescope live_grep<CR>
 nnoremap <silent><leader>pf :Telescope grep_string<CR>
+nnoremap <silent><leader>g :Telescope project<CR>
 
 " Harpoon
 nnoremap <silent><leader>m :lua require("harpoon.mark").add_file()<CR>
