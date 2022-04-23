@@ -53,6 +53,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'ThePrimeagen/harpoon'
 
+" Floatterm
+Plug 'voldikss/vim-floaterm'
+
 "Git
 Plug 'tpope/vim-fugitive'               " Git
 Plug 'tpope/vim-rhubarb'                " Gbrowse
