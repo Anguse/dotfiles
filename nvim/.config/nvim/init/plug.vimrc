@@ -26,6 +26,7 @@ Plug 'ekalinin/dockerfile.vim'
 Plug 'godlygeek/tabular'
 Plug 'rhysd/vim-clang-format'
 Plug 'Chiel92/vim-autoformat'
+Plug 'sheerun/vim-polyglot'
 
 " Tasks
 Plug 'skywind3000/asynctasks.vim'
