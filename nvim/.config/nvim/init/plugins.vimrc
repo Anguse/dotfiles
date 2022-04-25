@@ -39,6 +39,9 @@ nnoremap <silent><leader>d :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <silent><leader>s :lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <silent><leader>a :lua require("harpoon.ui").nav_file(4)<CR>
 
+" Floatterm
+nnoremap <silent><leader>t :FloatermToggle<CR>
+
 " Fugitive gitlab for strongpoint
 let g:fugitive_gitlab_domains = ['https://gitlab.strongpoint.com']
 
