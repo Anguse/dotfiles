@@ -17,10 +17,11 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-project.nvim'
 
 " Completion
-Plug 'Valloric/YouCompleteMe'
 Plug 'lyuts/vim-rtags'
 Plug 'vim-ruby/vim-ruby'
 Plug 'ekalinin/dockerfile.vim'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Format
 Plug 'godlygeek/tabular'
