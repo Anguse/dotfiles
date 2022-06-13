@@ -13,13 +13,13 @@ let g:airline_powerline_fonts = 1
 
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
-nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
-nnoremap <Leader>grr :YcmCompleter RefactorRename<SPACE>
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-endif
+" nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
+" nnoremap <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
+" nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+" nnoremap <Leader>grr :YcmCompleter RefactorRename<SPACE>
+" if !exists('g:ycm_semantic_triggers')
+"     let g:ycm_semantic_triggers = {}
+" endif
 
 "Fugitive
 nnoremap <leader>b :Gblame<CR>
