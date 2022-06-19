@@ -74,7 +74,7 @@ endif
 let g:clang_format#detect_style_file=1
 
 " Nerdtree
-nnoremap <leader>pv :NERDTreeFind<CR>
+nnoremap <leader>pv :NvimTreeToggle<CR>
 
 " Ctrl-space
 " let g:CtrlSpaceDefaultMappingKey = "<C-space> "
