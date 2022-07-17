@@ -2,9 +2,11 @@ require("telescope").setup {
   extensions = {
     project = {
       base_dirs = {
-        '~/.dotfiles',
-        '~/.config'
-      }
+        {'~/.dotfiles'},
+        {'~/.config/nvim'}
+      },
+      hidden_files = true,
+      theme = "dropdown"
     }
   }
 }
