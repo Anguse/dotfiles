@@ -129,3 +129,10 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+cmp.setup.cmdline('/', {
+    mapping = cmd.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})

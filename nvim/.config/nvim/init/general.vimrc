@@ -24,7 +24,6 @@ filetype plugin on
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 packloadall
 set background=dark
-colorscheme gruvbox
 
 " netrw directory browser
 let g:netrw_browse_split=2
