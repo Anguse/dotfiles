@@ -51,7 +51,7 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'shumphrey/fugitive-gitlab.vim'
-  use 'airblade/vim-gitgutter'
+  -- use 'airblade/vim-gitgutter'
 
   use "sheerun/vim-polyglot"         -- Indentation
   use 'tpope/vim-eunuch'             -- Shell commands
