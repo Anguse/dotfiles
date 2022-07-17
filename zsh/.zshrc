@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.local/share
 
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
