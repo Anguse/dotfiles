@@ -1,8 +1,11 @@
-export PATH=$PATH:$HOME/.local/bin:$HOME/.local/share
+# If you come from bash you might have to change your $PATH.
+export PATH=$PATH:$HOME/.local/bin:$HOME/.local/lib:/usr/local/go/bin
+export PYTHONPATH="${PYTHONPATH}:~/.local/lib/python3.8/site-packages:~/.local/lib/python3.8/site-packages"
 
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 export TERM=screen-256color
+export GPG_TTY=$(tty)
 
 # override localization
 export LC_ALL=en_US.UTF-8  
@@ -147,7 +150,7 @@ docking-station-destroy()
 }
 open-ssh-hosts()
 {
-    nmap -p 22 --open -sV $SP_KISTA_SUBNET/24 -oG - | awk '/Up$/{print $2}'
+    nmap -p 22 --open -sV 172.20.35.4\24 -oG - | awk '/Up$/{print $2}'
 }
 ssh-syscon-target()
 {

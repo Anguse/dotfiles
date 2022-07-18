@@ -6,3 +6,4 @@
 ~/.config/i3/config
 ~/.ssh/config
 ~/.config/nvim/init
+~/workspace/src/mvp-demo/.envrc
