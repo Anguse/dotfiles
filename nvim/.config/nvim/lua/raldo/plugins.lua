@@ -9,6 +9,8 @@ return require('packer').startup(function()
 
     -- Style
     use 'gruvbox-community/gruvbox'
+    use 'ayu-theme/ayu-vim'
+    use 'altercation/vim-colors-solarized'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
