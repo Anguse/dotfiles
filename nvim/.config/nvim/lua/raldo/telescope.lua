@@ -6,7 +6,8 @@ require("telescope").setup {
         {'~/.config/nvim'}
       },
       hidden_files = true,
-      theme = "dropdown"
+      theme = "dropdown",
+      sync_with_nvim_tree = true
     }
   }
 }
