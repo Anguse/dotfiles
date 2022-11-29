@@ -74,7 +74,7 @@ ZSH_THEME="arrow"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git direnv docker docker-compose helm kubectl autojump)
+plugins=(git direnv docker docker-compose helm kubectl autojump terraform)
 
 source $ZSH/oh-my-zsh.sh
 
