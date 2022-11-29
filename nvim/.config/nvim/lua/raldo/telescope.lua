@@ -7,7 +7,9 @@ require("telescope").setup {
         '--line-number',
         '--column',
         '--smart-case',
-        '--hidden'
+        '--hidden',
+        '--case-sensitive',
+        '--glob=!.git/',
     }
   },
   extensions = {
