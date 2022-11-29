@@ -21,6 +21,7 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-project.nvim'
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
     -- LSP
     use 'williamboman/nvim-lsp-installer'
@@ -46,11 +47,11 @@ return require('packer').startup(function()
 
     -- Tree
     use {
-        'kyazdani42/nvim-tree.lua',
-        requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+         'nvim-tree/nvim-tree.lua',
+          requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+          },
+          tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
     -- use 'preservim/nerdtree'
