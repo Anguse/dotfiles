@@ -8,12 +8,13 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Style
+    use 'nvim-tree/nvim-web-devicons'
     use 'gruvbox-community/gruvbox'
     use 'ayu-theme/ayu-vim'
     use 'altercation/vim-colors-solarized'
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
     -- File find
@@ -35,9 +36,11 @@ return require('packer').startup(function()
     -- Diagnostics
     use {
         "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
+        requires = "nvim-tree/nvim-web-devicons",
         config = function()
             require("trouble").setup {
+                icons = true,
+                use_diagnostic_signs = true,
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
