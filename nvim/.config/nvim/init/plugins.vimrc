@@ -21,14 +21,12 @@ let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
 "     let g:ycm_semantic_triggers = {}
 " endif
 
-"Fugitive
-nnoremap <leader>b :Gblame<CR>
-
 " Telecope
-nnoremap <silent><C-p> :Telescope find_files hidden=true<CR>
+nnoremap <silent><leader>[ :Telescope find_files hidden=true<CR>
 nnoremap <silent><leader>ps :Telescope live_grep<CR>
 nnoremap <silent><leader>pf :Telescope grep_string<CR>
-nnoremap <silent><leader>g :Telescope project<CR>
+nnoremap <silent><leader>] :Telescope project<CR>
+nnoremap <silent><leader>h :Telescope help_tags<CR>
 
 " Harpoon
 nnoremap <silent><leader>m :lua require("harpoon.mark").add_file()<CR>
@@ -47,7 +45,6 @@ let g:fugitive_gitlab_domains = ['https://gitlab.strongpoint.com']
 " Gutter
 let g:gitgutter_enabled = 0
 nmap <F7> :GitGutterToggle<CR>
-nnoremap <leader>gg :GitGutterQuickFix<bar> :copen<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
