@@ -92,9 +92,6 @@ source $ZSH/oh-my-zsh.sh
    export EDITOR='nvim'
  fi
 
-# fasd init
-eval "$(fasd --init auto)"
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -186,6 +183,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source <(kubectl completion zsh)
+autoload -U compinit; compinit
 autoload -U +X bashcompinit && bashcompinit
+
+source <(kubectl completion zsh)
+source <(glab completion -s zsh); compdef _glab glab
 source /etc/bash_completion.d/az.completion
