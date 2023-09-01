@@ -1,5 +1,6 @@
 require("telescope").setup {
   defaults = {
+    file_ignore_patterns = {".git/"},
     vimgrep_arguments = {
         'rg',
         '--color=never',
