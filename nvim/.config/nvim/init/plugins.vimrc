@@ -23,6 +23,7 @@ let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
 
 " Telecope
 nnoremap <silent><leader>[ :Telescope find_files hidden=true<CR>
+nnoremap <silent><leader><leader> :Telescope resume hidden=true<CR>
 nnoremap <silent><leader>ps :Telescope live_grep<CR>
 nnoremap <silent><leader>pf :Telescope grep_string<CR>
 nnoremap <silent><leader>] :Telescope project<CR>
