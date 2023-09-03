@@ -61,13 +61,8 @@ return require('packer').startup(function()
           tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
-    -- use 'preservim/nerdtree'
-    -- use 'tiagofumo/vim-nerdtree-syntax-highlight'
-    -- use 'ryanoasis/vim-devicons'
-
     -- Navigation
     use 'ThePrimeagen/harpoon'
-
     use {
         "akinsho/toggleterm.nvim",
         tag = '*',
@@ -80,7 +75,6 @@ return require('packer').startup(function()
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
     use 'shumphrey/fugitive-gitlab.vim'
-    -- use 'airblade/vim-gitgutter'
 
     use "sheerun/vim-polyglot" -- Indentation
     use 'tpope/vim-eunuch' -- Shell commands
@@ -92,4 +86,6 @@ return require('packer').startup(function()
     use 'MarcWeber/vim-addon-mw-utils' -- Dependancy?
     use 'wellle/targets.vim' -- Extended targets***, like "ci"
     use 'folke/zen-mode.nvim' -- Zen mode
+    use("eandrju/cellular-automaton.nvim") -- Flambouyant animations
+
 end)
