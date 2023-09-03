@@ -21,7 +21,7 @@ require("telescope").setup {
       },
       hidden_files = true,
       theme = "dropdown",
-      sync_with_nvim_tree = false
+      sync_with_nvim_tree = true
     }
   }
 }
