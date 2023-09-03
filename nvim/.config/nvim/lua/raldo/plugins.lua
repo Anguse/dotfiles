@@ -91,4 +91,5 @@ return require('packer').startup(function()
     use 'tomtom/tlib_vim' -- Utility functions, dependancy
     use 'MarcWeber/vim-addon-mw-utils' -- Dependancy?
     use 'wellle/targets.vim' -- Extended targets***, like "ci"
+    use 'folke/zen-mode.nvim' -- Zen mode
 end)
