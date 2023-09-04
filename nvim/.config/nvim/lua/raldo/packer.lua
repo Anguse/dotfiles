@@ -1,7 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function()
     -- Packer can manage itself
@@ -10,6 +10,13 @@ return require('packer').startup(function()
     -- Style
     use 'nvim-tree/nvim-web-devicons'
     use 'gruvbox-community/gruvbox'
+    use({
+	  'rose-pine/neovim',
+	  as = 'rose-pine',
+	  config = function()
+		  vim.cmd('colorscheme rose-pine')
+	  end
+    })
     use 'ayu-theme/ayu-vim'
     use 'altercation/vim-colors-solarized'
     use {
