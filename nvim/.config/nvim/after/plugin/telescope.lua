@@ -13,6 +13,11 @@ require("telescope").setup {
         '--glob=!.git/',
     }
   },
+  pickers = {
+    find_files = {
+      hidden = true,
+    }
+  },
   extensions = {
     project = {
       base_dirs = {
@@ -28,3 +33,18 @@ require("telescope").setup {
 
 require("telescope").load_extension('harpoon')
 require("telescope").load_extension('project')
+
+local builtin = require("telescope.builtin")
+local project = require("telescope").extensions.project
+
+vim.keymap.set('n', '<leader>[', builtin.find_files, {})
+vim.keymap.set('n', '<leader>]', project.project, {})
+vim.keymap.set('n', '<leader><leader>', builtin.resume, {})
+vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>pf', builtin.grep_string, {})
+vim.keymap.set('n', '<leader>pg', function()
+  builtin.live_grep({
+    cwd = '/home/hdla/wss/gitlab/',
+  })
+end)
+vim.keymap.set('n', '<leader>h', builtin.help_tags, {})

@@ -21,14 +21,6 @@ let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
 "     let g:ycm_semantic_triggers = {}
 " endif
 
-" Telecope
-nnoremap <silent><leader>[ :Telescope find_files hidden=true<CR>
-nnoremap <silent><leader><leader> :Telescope resume hidden=true<CR>
-nnoremap <silent><leader>ps :Telescope live_grep<CR>
-nnoremap <silent><leader>pf :Telescope grep_string<CR>
-nnoremap <silent><leader>] :Telescope project<CR>
-nnoremap <silent><leader>h :Telescope help_tags<CR>
-
 " Harpoon
 nnoremap <silent><leader>m :lua require("harpoon.mark").add_file()<CR>
 nnoremap <silent><leader>j :lua require("harpoon.ui").toggle_quick_menu()<CR>
@@ -61,7 +53,7 @@ let g:DoxygenToolkit_authorName="Harald Lilja"
 let g:DoxygenToolkit_licenseTag="My own license" 
 
 " vim-maximizer
-nnoremap <leader>z :MaximizerToggle <CR>
+" nnoremap <leader>z :MaximizerToggle <CR>
 
 " vim-ripgrep
 if executable('rg')
