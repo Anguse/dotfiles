@@ -89,6 +89,17 @@ return require('packer').startup(function()
           require("toggleterm").setup()
         end
     }
+    use {
+      'glepnir/dashboard-nvim',
+      event = 'VimEnter',
+      config = function()
+        require('dashboard').setup {
+          -- config
+          theme = 'hyper'
+        }
+      end,
+      requires = {'nvim-tree/nvim-web-devicons'}
+    }
 
     -- Git
     use 'tpope/vim-fugitive'
