@@ -3,18 +3,19 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim')
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     -- Style
     use 'nvim-tree/nvim-web-devicons'
     use 'gruvbox-community/gruvbox'
+    use 'folke/tokyonight.nvim'
     use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
 	  config = function()
-		  vim.cmd('colorscheme rose-pine')
+		  vim.cmd('colorscheme rose-pine-main')
 	  end
     })
     use 'ayu-theme/ayu-vim'
@@ -29,6 +30,7 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-project.nvim'
+    use 'jvgrootveld/telescope-zoxide'
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
     -- LSP
@@ -54,7 +56,12 @@ return require('packer').startup(function()
             {'rafamadriz/friendly-snippets'},
         }
     }
+
     use 'nvim-treesitter/nvim-treesitter'
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
     -- Diagnostics
     use {

@@ -14,6 +14,9 @@ require("telescope").setup {
     }
   },
   pickers = {
+    colorscheme = {
+      enable_preview = true
+    },
     find_files = {
       hidden = true,
     }
@@ -30,15 +33,15 @@ require("telescope").setup {
     }
   }
 }
-
-require("telescope").load_extension('harpoon')
-require("telescope").load_extension('project')
+local t = require('telescope')
+t.load_extension('harpoon')
+t.load_extension('project')
+t.load_extension('zoxide')
 
 local builtin = require("telescope.builtin")
-local project = require("telescope").extensions.project
 
 vim.keymap.set('n', '<leader>[', builtin.find_files, {})
-vim.keymap.set('n', '<leader>]', project.project, {})
+vim.keymap.set('n', '<leader>z', t.extensions.project.project, {})
 vim.keymap.set('n', '<leader><leader>', builtin.resume, {})
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>pf', builtin.grep_string, {})
@@ -47,4 +50,6 @@ vim.keymap.set('n', '<leader>pg', function()
     cwd = '/home/hdla/wss/gitlab/',
   })
 end)
+vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>]', t.extensions.zoxide.list, {})
