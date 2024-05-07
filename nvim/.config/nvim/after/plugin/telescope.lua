@@ -37,6 +37,7 @@ local t = require('telescope')
 t.load_extension('harpoon')
 t.load_extension('project')
 t.load_extension('zoxide')
+t.load_extension('advanced_git_search')
 
 local builtin = require("telescope.builtin")
 
@@ -50,6 +51,7 @@ vim.keymap.set('n', '<leader>pg', function()
     cwd = '/home/hdla/wss/gitlab/',
   })
 end)
+vim.keymap.set('n', '<leader>g', t.extensions.advanced_git_search.search_log_content, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>]', t.extensions.zoxide.list, {})
