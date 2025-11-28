@@ -30,8 +30,17 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-project.nvim'
+    use 'nvim-telescope/telescope-live-grep-args.nvim'
     use 'jvgrootveld/telescope-zoxide'
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+    -- use {
+    --     'aaronhallaert/advanced-git-search.nvim',
+    --     requires = {
+    --         'nvim-telescope/telescope.nvim',
+    --         'nvim-lua/plenary.nvim',
+    --         'nvim-telescope/telescope-live-grep-args.nvim'
+    --     }
+    -- }
     use 'aaronhallaert/advanced-git-search.nvim'
 
     -- LSP
@@ -85,9 +94,19 @@ return require('packer').startup(function(use)
           requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
           },
-          tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
-
+    use({
+      "stevearc/oil.nvim",
+      config = function()
+        require("oil").setup()
+      end,
+    })
+    use {
+      'hedyhli/outline.nvim',
+      config = function()
+        require("outline").setup()
+      end
+    }
     -- Navigation
     use 'ThePrimeagen/harpoon'
     use {
@@ -109,24 +128,37 @@ return require('packer').startup(function(use)
       requires = {'nvim-tree/nvim-web-devicons'}
     }
 
-    -- Keybindings
-    use {
-      "folke/which-key.nvim",
-      config = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
-        require("which-key").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
+    -- ChatGPT
+    use({
+      "jackMort/ChatGPT.nvim",
+        config = function()
+          require("chatgpt").setup()
+        end,
+        requires = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
         }
-      end
-    }
+    })
+
+    -- -- Keybindings
+    -- use {
+    --   "folke/which-key.nvim",
+    --   config = function()
+    --     vim.o.timeout = true
+    --     vim.o.timeoutlen = 300
+    --     require("which-key").setup {
+    --       -- your configuration comes here
+    --       -- or leave it empty to use the default settings
+    --       -- refer to the configuration section below
+    --     }
+    --   end
+    -- }
 
     -- Git
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
-    use 'shumphrey/fugitive-gitlab.vim'
+    -- use 'shumphrey/fugitive-gitlab.vim'
 
     use "sheerun/vim-polyglot" -- Indentation
     use 'tpope/vim-eunuch' -- Shell commands
@@ -139,5 +171,6 @@ return require('packer').startup(function(use)
     use 'wellle/targets.vim' -- Extended targets***, like "ci"
     use 'folke/zen-mode.nvim' -- Zen mode
     use("eandrju/cellular-automaton.nvim") -- Flambouyant animations
+    use 'jiangmiao/auto-pairs' -- Close brackets, quotes, etc..
 
 end)

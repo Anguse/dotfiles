@@ -1,6 +1,7 @@
-local wk = require("which-key")
-wk.register({
-	c = {
-		c = { "<cmd>ChatGPT<cr>", "ChatGPT" }
-	}
-}, { prefix = "<leader>" })
+-- local wk = require("which-key")
+-- wk.register({
+-- 	c = {
+-- 		c = { "<cmd>ChatGPT<cr>", "ChatGPT" },
+-- 		a = { "<cmd>ChatGPTActAs<cr>", "ChatGPT act as.." }
+-- 	}
+-- }, { prefix = "<leader>" })

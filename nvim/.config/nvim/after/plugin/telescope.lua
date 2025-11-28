@@ -22,6 +22,14 @@ require("telescope").setup {
     }
   },
   extensions = {
+    advanced_git_search = {
+      -- Show builtin git pickers when in git directory
+      show_builtin = true,
+      -- Disable default keymaps
+      disable_keymaps = false,
+      -- Disable cache for git file_list
+      disable_cache = false
+    },
     project = {
       base_dirs = {
         {'~/.dotfiles'},
@@ -34,10 +42,11 @@ require("telescope").setup {
   }
 }
 local t = require('telescope')
+t.load_extension('advanced_git_search')
 t.load_extension('harpoon')
 t.load_extension('project')
 t.load_extension('zoxide')
-t.load_extension('advanced_git_search')
+t.load_extension('live_grep_args')
 
 local builtin = require("telescope.builtin")
 
